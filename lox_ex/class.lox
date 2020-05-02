@@ -1,0 +1,38 @@
+class Breakfast {
+  init(meat, bread) {
+    this.meat = meat;
+    this.bread = bread;
+  }
+
+  cook() {
+    print "Eggs a-fryin'!";
+  }
+
+  serve(who) {
+    print "Enjoy your breakfast, " + who;
+    print this.meat + " and " + this.bread;
+  }
+}
+
+var meat = "sausage";
+var bread = "sourdough";
+var sausasourd = Breakfast(meat, bread);
+
+sausasourd.serve("Gilgamesh");
+
+print "";
+
+class Brunch < Breakfast {
+  init(meat, bread, drink) {
+    super.init(meat, bread);
+    this.drink = drink;
+  }
+
+  serve(who) {
+    super.serve(who);
+    print "How about a " + this.drink;
+  }
+}
+
+var benedict = Brunch("ham", "muffin", "bloody mary");
+benedict.serve("dear guest");
